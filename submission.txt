@@ -1,0 +1,31 @@
+# Petunjuk Menjalankan Script dan Testing Project
+
+## 1. Menjalankan program utama
+Jalankan script utama dengan perintah berikut di terminal:
+python main.py
+
+## 2. Menjalankan unit test
+Gunakan pytest untuk menjalankan semua test yang ada di folder `tests`:
+python -m pytest tests/ -v
+
+## 3. Menjalankan test coverage
+Untuk melihat seberapa besar coverage kode dengan test, jalankan perintah berikut:
+python -m pytest tests/ --cov=utils --cov-report=term --cov-report=html
+
+- --cov=utils untuk mengukur coverage pada folder `utils` (tempat kode sumber)
+- --cov-report=term untuk menampilkan ringkasan di terminal
+- --cov-report=html untuk membuat laporan HTML di folder `htmlcov`
+
+### Melihat laporan coverage secara visual
+Setelah menjalankan perintah coverage dengan opsi `--cov-report=html`, buka file berikut di browser:
+start htmlcov\index.html
+
+## 4. URL Google Sheets Referensi
+Data disimpan pada Google Sheets berikut ini:
+https://docs.google.com/spreadsheets/d/1e_gNgqKhynGGdQGJNsT48YoTroUaQRzWwMRE0AmYo7U/edit?usp=sharing
+
+
+# Catatan Tambahan
+- Pastikan environment variables untuk database sudah di-set pada file `.env` sebelum menjalankan fungsi penyimpanan ke PostgreSQL.
+- Pastikan file credential JSON untuk Google Sheets API sudah tersedia dan path-nya sesuai saat memanggil fungsi penyimpanan ke Google Sheets.
+
